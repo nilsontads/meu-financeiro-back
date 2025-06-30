@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: meufinanceiro-back
+    runtime: java
+    buildCommand: "./mvnw clean package -DskipTests"
+    startCommand: "java -jar target/*.jar"
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:postgresql://dpg-d1h8ucvgi27c73cehm20-a.frankfurt-postgres.render.com:5432/meufinanceiro_db
+      - key: SPRING_DATASOURCE_USERNAME
+        value: meufinanceiro_db_user
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: ng4J2E61x4DTTrlvWeRJsoKek07iBl0a
+      - key: SPRING_JPA_HIBERNATE_DDL_AUTO
+        value: update
